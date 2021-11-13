@@ -13,6 +13,12 @@ main part of a master's project.
 All code, for now, is at the `develop` branch. At this moment `build` process
 passes but the image **not running** at the board.
 
+* `u-boot` can't uncompress the `fitImage`:
+  ```
+  Error: inflate() returned -5
+  gzip compressed: uncompress error -1
+  ```
+
 ## Software BoM
 
 ### Meta layers
