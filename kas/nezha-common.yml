@@ -1,0 +1,49 @@
+header:
+  version: 8
+
+repos:
+  meta-nezha:
+    layers:
+      meta-nezha-bsp:
+      meta-nezha-distro:
+
+  poky:
+    url: https://git.yoctoproject.org/git/poky
+    refspec: 2a3e232acf119911fbde4f5f5482adc2a7a3f1e2
+    layers:
+      meta:
+      meta-poky:
+      meta-yocto-bsp:
+
+  meta-openembedded:
+    url: https://git.openembedded.org/meta-openembedded
+    refspec: dc262c52b0b10625bf7a2330e1c4e0fe2d8db6aa
+    layers:
+      meta-oe:
+      meta-networking:
+      meta-python:
+
+  meta-riscv:
+    url: https://github.com/riscv/meta-riscv.git
+    refspec: 69f38710a01fc5c8de35d69601a5d5bb1044886b
+
+bblayers_conf_header:
+  standard: |
+    POKY_BBLAYERS_CONF_VERSION = "2"
+    BBPATH = "${TOPDIR}"
+    BBFILES ?= ""
+local_conf_header:
+  standard: |
+    CONF_VERSION = "1"
+    PACKAGE_CLASSES = "package_rpm"
+    SDKMACHINE = "x86_64"
+  diskmon: |
+    BB_DISKMON_DIRS = "\
+        STOPTASKS,${TMPDIR},1G,100K \
+        STOPTASKS,${DL_DIR},1G,100K \
+        STOPTASKS,${SSTATE_DIR},1G,100K \
+        STOPTASKS,/tmp,100M,100K \
+        ABORT,${TMPDIR},100M,1K \
+        ABORT,${DL_DIR},100M,1K \
+        ABORT,${SSTATE_DIR},100M,1K \
+        ABORT,/tmp,10M,1K"
