@@ -9,6 +9,8 @@ SRCREV = "012f5a3d01be6d44e32c74bb3637ec281790b297"
 FORK ?= "smaeul"
 BRANCH ?= "riscv/d1-wip"
 SRC_URI = "git://github.com/${FORK}/linux.git;protocol=git;branch=${BRANCH} \
+           file://enable-autofs4.cfg \
+           file://enable-cgroups.cfg \
           "
 
 LINUX_VERSION ?= "4.13.0"
