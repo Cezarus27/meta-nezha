@@ -13,7 +13,7 @@ SRC_URI = "git://github.com/${FORK}/linux.git;protocol=git;branch=${BRANCH} \
            file://enable-cgroups.cfg \
           "
 
-LINUX_VERSION ?= "4.13.0"
+LINUX_VERSION ?= "5.14.0-rc4"
 LINUX_VERSION_EXTENSION:append = "-nezha"
 
 KBUILD_DEFCONFIG:nezha-allwinner-d1 = "nezha_defconfig"
