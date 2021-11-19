@@ -6,7 +6,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
 KERNEL_VERSION_SANITY_SKIP = "1"
 
 SRCREV = "012f5a3d01be6d44e32c74bb3637ec281790b297"
-FORK ?= "smaeul"
+FORK ?= "Cezarus27"
 BRANCH ?= "riscv/d1-wip"
 SRC_URI = "git://github.com/${FORK}/linux.git;protocol=git;branch=${BRANCH} \
            file://enable-autofs4.cfg \
