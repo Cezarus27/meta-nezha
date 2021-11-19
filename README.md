@@ -26,7 +26,8 @@ $ SHELL=bash kas-docker build meta-nezha/kas/nezha-minimal.yml
 ### Key repositories
 
 `meta-nezha-bsp` layer contains custom recipes for `u-boot`, `Linux`, `OpenSBI`
-and `boot0` which use a version patched / created by **smaeul**:
+and `boot0`. This recipes get code from fork of repos patched / created by
+**smaeul**:
 
 * [OpenSBI](https://github.com/smaeul/opensbi): `d1-wip` branch
 
@@ -38,6 +39,12 @@ and `boot0` which use a version patched / created by **smaeul**:
 * [boot0](https://github.com/smaeul/sun20i_d1_spl): `mainline` branch
 
 ## Current status
+
+### 19.11.2021
+
+* System boots now. `Kernel Panic` error was caused by `rng` which is used to
+  generate entropy. It cannot handle `SIGSEGV` signal in `libc-2.33`. The
+  solution for this was to replace the `rng-tools` with `haveged`.
 
 ### 14.11.2021
 
