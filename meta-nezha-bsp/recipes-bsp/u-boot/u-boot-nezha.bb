@@ -5,7 +5,7 @@ require recipes-bsp/u-boot/u-boot.inc
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 SRC_URI = " \
-    git://github.com/smaeul/u-boot.git;protocol=git;branch=d1-wip \
+    git://github.com/Cezarus27/u-boot.git;protocol=git;branch=d1-wip \
     file://0001-sun20i-set-CONFIG_SYS_BOOTM_LEN.patch \
     file://tftp-mmc-boot.txt \
     file://toc.cfg \
