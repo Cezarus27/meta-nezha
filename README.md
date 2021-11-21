@@ -46,6 +46,8 @@ and `boot0`. This recipes get code from fork of repos patched / created by
   generate entropy. It cannot handle `SIGSEGV` signal in `libc-2.33`. The
   solution for this was to replace the `rng-tools` with `haveged`.
 
+  [![asciicast](https://asciinema.org/a/450212.svg)](https://asciinema.org/a/450212)
+
 ### 14.11.2021
 
 * `u-boot` problem fixed with patch:
