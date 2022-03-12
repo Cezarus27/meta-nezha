@@ -11,12 +11,9 @@
 setenv serverip @SERVERIP@
 dhcp
 
-setenv bootargs earlyprintk=uart8250,0x02500000 clk_ignore_unused initcall_debug=0 console=ttyS0,115200 loglevel=8 root=/dev/mmcblk0p2 rootwait  init=/sbin/init
-
 # See if we have a TFTP uEnv.txt file
 if tftpboot ${scriptaddr} uEnv.txt; then
-    env import -t ${scriptaddr} ${filesize}
-    run bootcmd
+  env import -t ${scriptaddr} ${filesize}
 fi;
 
 # Try to boot a fitImage from the TFTP server
@@ -26,8 +23,7 @@ fi;
 
 # See if we have a MMC uEnv.txt file
 if fatload ${devtype} ${devnum}:${distro_bootpart} ${scriptaddr} /uEnv.txt; then
-    env import -t ${scriptaddr} ${filesize}
-    run bootcmd
+  env import -t ${scriptaddr} ${filesize}
 fi;
 
 # Try to boot a fitImage from the MMC
