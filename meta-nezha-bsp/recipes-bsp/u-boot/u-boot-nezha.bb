@@ -4,13 +4,14 @@ require recipes-bsp/u-boot/u-boot.inc
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 SRC_URI = " \
-    git://github.com/Cezarus27/u-boot.git;protocol=git;branch=d1-wip \
+    git://github.com/tekkamanninja/u-boot.git;protocol=git;branch=allwinner_d1 \
     file://0001-sun20i-set-CONFIG_SYS_BOOTM_LEN.patch \
     file://tftp-mmc-boot.txt \
+    file://uEnv.txt \
     file://toc.cfg \
 "
 
-SRCREV = "d4270eaf8c0b06fe28059188d5e7c13b5c0c6b81"
+SRCREV = "6db9960b2443ef84b88a573cb5817f8e0ef3712e"
 
 DEPENDS:append = " u-boot-tools-native python3-setuptools-native"
 
@@ -35,8 +36,9 @@ do_compile:append() {
 
 do_deploy:append() {
     install -m 644 ${B}/u-boot.toc1 ${DEPLOYDIR}
+    install -m 644 ${WORKDIR}/uEnv.txt ${DEPLOYDIR}
 }
 
-COMPATIBLE_MACHINE = "(nezha-allwinner-d1)"
+COMPATIBLE_MACHINE = "(nezha-allwinner-d1-512m|nezha-allwinner-d1-1g|nezha-allwinner-d1-2g)"
 
 TOOLCHAIN = "gcc"
