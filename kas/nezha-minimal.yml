@@ -4,6 +4,6 @@ header:
     - nezha-common.yml
 
 distro: nezha
-machine: nezha-allwinner-d1
+machine: nezha-allwinner-d1-1g
 target:
   - nezha-image-minimal
