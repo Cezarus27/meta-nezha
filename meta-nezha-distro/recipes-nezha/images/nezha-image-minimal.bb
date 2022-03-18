@@ -6,8 +6,11 @@ IMAGE_FEATURES += " \
 "
 
 IMAGE_INSTALL_append = " \
+    packagegroup-nezha-tools \
     packagegroup-nezha-test \
     packagegroup-nezha-network \
+    packagegroup-nezha-python \
+    linux-firmware \
 "
 
 LICENSE = "MIT"

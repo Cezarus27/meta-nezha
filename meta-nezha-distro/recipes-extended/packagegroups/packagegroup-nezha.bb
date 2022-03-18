@@ -6,18 +6,34 @@ PR = "r1"
 inherit packagegroup
 
 PACKAGES = " \
-    packagegroup-nezha-test \
-    packagegroup-nezha-network \
-    "
+    ${PN}-tools \
+    ${PN}-test \
+    ${PN}-network \
+    ${PN}-python \
+"
+
+RDEPENDS:${PN}-tools = " \
+    make \
+    gcc \
+    binutils \
+    binutils-dev \
+"
 
 RDEPENDS:${PN}-test = " \
     phoronix-test-suite \
     stressapptest \
     iperf3 \
+    stress-ng \
     "
 
 RDEPENDS:${PN}-network = " \
     networkmanager \
     networkmanager-nmcli \
-    xradio \
+"
+
+RDEPENDS:${PN}-python = " \
+    python3 \
+    python3-dev \
+    python3-pip \
+    python3-setuptools \
 "
