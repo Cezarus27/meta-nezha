@@ -8,7 +8,8 @@ KERNEL_VERSION_SANITY_SKIP = "1"
 SRCREV = "af3f4a1caec12845b809fba959e6334ab3b52a40"
 FORK ?= "tekkamanninja"
 BRANCH ?= "allwinner_nezha_d1_devel"
-SRC_URI = "git://github.com/${FORK}/linux.git;protocol=git;branch=${BRANCH} \
+SRC_URI = "git://github.com/${FORK}/linux.git;protocol=https;branch=${BRANCH} \
+           file://0001-riscv-fix-build-with-binutils-2.38.patch \
            file://enable-autofs4.cfg \
            file://enable-cgroups.cfg \
            file://enable-modules.cfg \
@@ -19,4 +20,4 @@ LINUX_VERSION_EXTENSION:append = "-nezha"
 
 KBUILD_DEFCONFIG = "nezha_defconfig"
 
-COMPATIBLE_MACHINE = "(nezha-allwinner-d1-512m|nezha-allwinner-d1-1g|nezha-allwinner-d1-2g)"
+COMPATIBLE_MACHINE = "(nezha-allwinner-d1*)"

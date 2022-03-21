@@ -1,14 +1,15 @@
-LICENSE = "Unknown"
-LIC_FILES_CHKSUM = "file://common/lzma/license.txt;md5=8ecc4f7ef807bbf661bf65387dc7cd08"
+LICENSE = "GPL2.0+"
+LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/GPL-2.0-or-later;md5=fed54355545ffd980b814dab4a3b312c"
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 SRC_URI = " \
-	git://github.com/Cezarus27/sun20i_d1_spl;protocol=https;branch=mainline \
+	git://github.com/smaeul/sun20i_d1_spl;protocol=https;branch=mainline \
 	file://0001-config.mk-provide-path-to-linux-headers.patch \
+	file://0002-riscv-fix-build-with-binutils-2.38.patch \
 "
 
 PV = "1.0-dev"
-SRCREV = "771192d0b3737798d7feca87263c8fa74a449787"
+SRCREV = "0ad88bfdb723b1ac74cca96122918f885a4781ac"
 
 S = "${WORKDIR}/git"
 

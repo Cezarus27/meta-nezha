@@ -1,13 +1,19 @@
 # Mainline OpenSBI supports the C906 out of the box, but it needs a few tweaks
 # and a new reset driver for the sunxi watchdog.
-SRCREV = "c9024b561c01aa469bed3c2266d78e6ae76882ff"
-SRC_URI = "git://github.com/tekkamanninja/opensbi.git;branch=allwinner_d1 \
-          "
+FILESEXTRAPATHS:prepend:nezha := "${THISDIR}/files:"
 
-EXTRA_OEMAKE += "CROSS_COMPILE=${TARGET_PREFIX} FW_PIC=y"
+SRC_URI:append:nezha = " \
+    file://0001-lib-utils-fdt-Require-match-data-to-be-const.patch \
+    file://0002-lib-utils-timer-Add-a-separate-compatible-for-the-D1.patch \
+"
 
-do_install() {
+EXTRA_OEMAKE:nezha += "CROSS_COMPILE=${TARGET_PREFIX} FW_PIC=y"
+
+do_install:nezha() {
     autotools_do_install
 }
 
-INSANE_SKIP_${PN} += "ldflags"
+# Remove dependencies due to dependency loop
+#do_compile:nezha[deploy] = "1"
+
+INSANE_SKIP_${PN}:nezha += "ldflags"

@@ -5,7 +5,7 @@ IMAGE_FEATURES += " \
     debug-tweaks \
 "
 
-IMAGE_INSTALL_append = " \
+IMAGE_INSTALL:append = " \
     packagegroup-nezha-tools \
     packagegroup-nezha-test \
     packagegroup-nezha-network \
