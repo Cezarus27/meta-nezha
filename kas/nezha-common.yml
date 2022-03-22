@@ -4,7 +4,6 @@ header:
 repos:
   meta-nezha:
     layers:
-      meta-nezha-bsp:
       meta-nezha-distro:
 
   poky:
@@ -24,8 +23,8 @@ repos:
       meta-python:
 
   meta-riscv:
-    url: https://github.com/riscv/meta-riscv.git
-    refspec: 69f38710a01fc5c8de35d69601a5d5bb1044886b
+    url: https://github.com/Cezarus27/meta-riscv.git
+    refspec: 9939cce6563e5a517f265a1ee52753ae2f7fec64
 
 bblayers_conf_header:
   standard: |
