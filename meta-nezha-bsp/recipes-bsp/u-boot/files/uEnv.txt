@@ -1,1 +1,0 @@
-bootargs=earlyprintk=uart8250,0x02500000 clk_ignore_unused initcall_debug=0 console=ttyS0,115200 loglevel=8 root=/dev/mmcblk0p2 rootwait  init=/sbin/init

@@ -1,10 +1,15 @@
 header:
   version: 8
 
+distro: nezha
+
+machine: nezha-allwinner-d1
+
+target: nezha-image-minimal
+
 repos:
   meta-nezha:
     layers:
-      meta-nezha-bsp:
       meta-nezha-distro:
 
   poky:
@@ -24,8 +29,8 @@ repos:
       meta-python:
 
   meta-riscv:
-    url: https://github.com/riscv/meta-riscv.git
-    refspec: master
+    url: https://github.com/Cezarus27/meta-riscv.git
+    refspec: 67c73076f95d4f82bcdb5cde7d78dfc410ed8edd
 
 bblayers_conf_header:
   standard: |
